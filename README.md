@@ -2,7 +2,7 @@
 
 A Wireshark dissector for Respawn's Source engine's encrypted packet format used in Titanfall and Apex Legends games.
 
-If the protocol isn't automatically detected based on UDP ports, you need to right click the packet and manually change its protocol to `TITANFALLPROTO`.
+If the protocol isn't automatically detected based on UDP ports, you need to right click the packet and manually change its protocol to `TITANFALLPROTO` (click Decode As, adjust the port and select the protocol under Current field).
 
 You need to provide the correct decryption key in protocol settings in order to successfully decrypt a packet (right click packet -> Protocol Preferences -> Titanfall Protocol Decryptor -> Decryption key).
 
@@ -24,6 +24,7 @@ cd luagcrypt
 sudo luarocks make --lua-version 5.2
 cd ..
 ```
+Note for Ubuntu users: have you might need to install `lua5.2` and `liblua5.2-dev` and uninstall `lua5.1` and `liblua5.1-dev`, because otherwise luarocks will ignore your will to use 5.2, and also rename `/usr/local/lib/lua/5.2/luagcrypt_scm_0-luagcrypt.so` to `/usr/local/lib/lua/5.2/luagcrypt.so`. It just works on Arch on the other hand.
 
 Then:
 ```
