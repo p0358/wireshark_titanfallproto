@@ -11,7 +11,7 @@ The default decryption key for Titanfall 2 is: `WDNWLmJYQ2ZlM0VoTid3Yg==`
 To access the decrypted packet data, click on a packet and expand the following in the lower pane: Titanfall Protocol Decryptor -> Raw decrypted data -> Decrypted data. The lowest pane will now have the data displayed for further examination. The raw decrypted data isn't further processed by this dissector.
 
 Screenshot:
-![screenshot](https://user-images.githubusercontent.com/5182588/166332050-934447c8-f12b-4097-b836-373edea55a10.png)
+![screenshot](https://user-images.githubusercontent.com/5182588/166333639-010bb529-30f5-4209-937f-a69214ab7bda.png)
 
 ## Installation
 
