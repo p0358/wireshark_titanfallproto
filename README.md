@@ -17,7 +17,7 @@ Screenshot:
 
 ### Linux
 
-First compile+install luagcrypt (yes, it's that simple):
+First compile+install luagcrypt (yes, it's that simple, it shall automatically get installed into `/usr/local/lib/lua/5.2/`):
 ```
 git clone https://github.com/Lekensteyn/luagcrypt.git
 cd luagcrypt
@@ -34,10 +34,17 @@ mkdir -p ~/.local/lib/wireshark/plugins/
 cp {base64,titanfallproto}.lua ~/.local/lib/wireshark/plugins/
 ```
 
-### Windows
+### Windows (lazy)
 
-1. Grab DLL for Windows and latest Wireshark from: https://github.com/Lekensteyn/luagcrypt
-2. Put it into the plugins dir in Wireshark installation at Program Files
-3. Copy the Lua files from this repo into plugins dir in Wireshark dir in %appdata%
-4. Hope it works
-5. Cry if not
+1. Grab conveniently compiled `luagcrypt.dll` from this repo (compatible with libgcrypt-20.dll v1.10.1.0 that's already bundled with latest Wireshark)
+2. Put it into the main dir of Wireshark installation at Program Files
+3. Copy the `.lua` files from this repo into `%appdata%\Wireshark\plugins`
+
+### Windows (compile manually)
+
+1. Clone this repo to compile luagcrypt manually: https://github.com/Lekensteyn/luagcrypt
+2. Put luarocks.exe inside of the dir, extracted from latest zip here: http://luarocks.github.io/luarocks/releases/ (`luarocks-*-windows-64.zip (luarocks.exe stand-alone Windows 64-bit binary)`)
+3. Download latest libgcrypt headers etc from: https://dev-libs.wireshark.org/windows/packages/libgcrypt/ and unpack the folders `bin`, `include`, `lib` from `installed/x64-windows` into the dir
+4. Run `./luarocks make --lua-version 5.2 LIBGCRYPT_DIR=.`
+5. Copy the compiled `luagcrypt.dll` into the main dir of Wireshark installation at Program Files
+6. Copy the `.lua` files from this repo into `%appdata%\Wireshark\plugins`
